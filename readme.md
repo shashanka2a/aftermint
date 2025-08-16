@@ -56,9 +56,6 @@
 ```
 
 ---
-Here’s the **updated `🚀 Setup Instructions`** section to include in your `README.md` — clean, clear, and formatted:
-
----
 
 ## 🚀 Setup Instructions
 
