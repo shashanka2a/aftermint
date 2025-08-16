@@ -1,23 +1,38 @@
-# mintari/utils.py
+# nftmint/utils.py
 
 from PIL import Image, ImageEnhance
 import os
 from django.conf import settings
 
+import replicate
+import requests
+from uuid import uuid4
+
 def generate_ghibli_style(image_path):
-    # Open original image
-    img = Image.open(image_path)
+    # Upload image to public temporary host (we'll use file.io for simplicity)
+    with open(image_path, 'rb') as f:
+        response = requests.post("https://file.io", files={"file": f})
+    image_url = response.json()['link']
 
-    # Simple mock transformation: apply color enhancement and blur
-    enhancer = ImageEnhance.Color(img)
-    stylized = enhancer.enhance(1.8)
+    # Call Replicate model
+    replicate_client = replicate.Client(api_token=settings.REPLICATE_API_TOKEN)
 
-    # Save transformed image
-    base = os.path.basename(image_path)
-    output_path = os.path.join(settings.MEDIA_ROOT, 'uploads/stylized', f"ghibli_{base}")
-    stylized.save(output_path)
+    output_url = replicate_client.run(
+        "fofr/ghibli-diffusion:be046ffc734c29c7f1e032b6d206a0ff3e62aaf832bb84521c27414696a0bbaa",
+        input={"image": image_url}
+    )
 
-    return f"/media/uploads/stylized/ghibli_{base}"
+    # Download result and save locally
+    result_img = requests.get(output_url)
+    filename = f"ghibli_{uuid4().hex}.png"
+    output_path = os.path.join('uploads/stylized', filename)
+    full_output_path = os.path.join(settings.MEDIA_ROOT, output_path)
+
+    with open(full_output_path, 'wb') as f:
+        f.write(result_img.content)
+
+    return f"/media/{output_path}"
+
 
 
 def upload_to_ipfs(file_path):
