@@ -39,7 +39,6 @@
 ## 📁 Project Structure
 
 ```
-.
 ├── mintari/             # 🎨 Frontend NFT minting app (Next.js + AfterMint SDK)
 │   ├── pages/
 │   ├── components/
@@ -57,32 +56,73 @@
 ```
 
 ---
+Here’s the **updated `🚀 Setup Instructions`** section to include in your `README.md` — clean, clear, and formatted:
 
-## ⚙️ Setup
+---
 
-### Backend (Django)
+## 🚀 Setup Instructions
 
-```bash
-cd backend
-python -m venv env
-source env/bin/activate
-pip install -r requirements.txt
-python manage.py runserver
-```
-
-* Uploads images and stores transformed art.
-* Uses `utils.py` with `generate_ghibli_style()` and `walrus_uploader()`.
-
-### Frontend (Next.js)
+### 1. 🖼️ `mintari` (Next.js App)
 
 ```bash
-cd frontend
+cd mintari
 npm install
 npm run dev
 ```
 
-* Uses `AfterMint SDK` for wallet connection and reward logic.
-* Integrates backend API to handle image upload and preview.
+> This runs the user-facing app.
+
+#### Available Pages:
+
+* `/upload` – Upload your image
+* `/preview` – View Ghibli-style transformed image
+* `/mint` – Mint your NFT
+* `/success` – Confirmation screen
+* `/reward` – Token-gated utility screen
+
+> 💡 Make sure to wrap your app in `AfterMintProvider` and use hooks like `useWallet` and `useRewardGate` to detect wallet connection, NFT mint, and trigger rewards.
+
+---
+
+### 2. 🔌 `aftermint-sdk` (TypeScript SDK)
+
+```bash
+cd aftermint-sdk
+npm install
+npm run build
+npm link    # For local development
+```
+
+Then, inside `mintari`:
+
+```bash
+cd mintari
+npm link aftermint-sdk
+```
+
+#### SDK Features:
+
+* ✅ **Wallet Connect** via [Dynamic](https://www.dynamic.xyz/)
+* ✅ **NFT Mint Detection** via [Flow Blockchain](https://flow.com/)
+* ✅ **Reward Modals** gated via [Lit Protocol](https://litprotocol.com/)
+* ✅ JSON-configurable utility drops (e.g. coupons, tools, bonus content)
+
+---
+
+### 3. 🛠️ `backend` (Django – Optional AI Image Transformer)
+
+Used for:
+
+* 🎨 Converting user-uploaded photos into **Ghibli-style illustrations**
+* 📤 Uploading final images to **IPFS** via [Walrus](https://docs.walrus.ai/)
+* 🔗 Returning the **IPFS URI** to `mintari` for minting
+
+#### Run the backend locally:
+
+```bash
+cd backend
+python manage.py runserver
+```
 
 ---
 
