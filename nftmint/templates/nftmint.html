@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mint Flow NFT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@onflow/fcl"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-50">
+  <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md text-center">
+    <h2 class="text-xl font-bold mb-4">Mint Flow NFT 🎨</h2>
+    <button id="connect" class="mb-3 w-full py-2 bg-blue-600 text-white rounded">Connect Wallet</button>
+    <button id="mint" class="w-full py-2 bg-green-600 text-white rounded">Mint NFT</button>
+  </div>
+
+  <script>
+    fcl.config()
+      .put("accessNode.api", "https://rest-testnet.onflow.org")
+      .put("discovery.wallet", "https://fcl-discovery.onflow.org/testnet/authn")
+
+    document.getElementById("connect").onclick = async () => {
+      await fcl.authenticate()
+    }
+
+    document.getElementById("mint").onclick = async () => {
+      const txId = await fcl.mutate({
+        cadence: `
+          transaction {
+            prepare(acct: AuthAccount) {
+              log("Minting simulated NFT")
+            }
+          }
+        `,
+        proposer: fcl.currentUser().authorization,
+        payer: fcl.currentUser().authorization,
+        authorizations: [fcl.currentUser().authorization],
+        limit: 100
+      })
+
+      alert("Minted! Transaction ID: " + txId)
+    }
+  </script>
+</body>
+</html>
