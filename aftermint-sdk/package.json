@@ -1,0 +1,35 @@
+{
+  "name": "aftermint-sdk",
+  "version": "1.0.0",
+  "description": "AfterMint SDK for NFT reward gating and content unlocking",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest"
+  },
+  "keywords": ["nft", "rewards", "gating", "lit-protocol", "flow", "dynamic"],
+  "author": "AfterMint Team",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@dynamic-labs/sdk-react-core": "^2.0.0",
+    "@onflow/fcl": "^1.12.2",
+    "@onflow/types": "^1.0.5",
+    "framer-motion": "^10.16.16",
+    "lucide-react": "^0.294.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  }
+}

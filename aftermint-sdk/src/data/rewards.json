@@ -1,0 +1,73 @@
+{
+  "rewards": [
+    {
+      "id": "ghibli-discount-10",
+      "title": "10% Off Ghibli Merchandise",
+      "description": "Get 10% off official Studio Ghibli merchandise in our partner store",
+      "type": "discount",
+      "value": "10% OFF",
+      "imageUrl": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
+      "expiresAt": "2024-12-31T23:59:59Z",
+      "requirements": {
+        "contractAddress": "0xf8d6e0586b0a20c7",
+        "minBalance": 1
+      },
+      "redemptionUrl": "https://store.ghibli.jp/discount/aftermint10"
+    },
+    {
+      "id": "exclusive-wallpapers",
+      "title": "Exclusive Ghibli Wallpapers",
+      "description": "Access to high-resolution Ghibli-style wallpapers created by our AI",
+      "type": "exclusive_content",
+      "value": "Premium Content",
+      "imageUrl": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
+      "requirements": {
+        "contractAddress": "0xf8d6e0586b0a20c7",
+        "minBalance": 1
+      }
+    },
+    {
+      "id": "physical-print",
+      "title": "Limited Edition Print",
+      "description": "Get a physical print of your Ghibli NFT artwork delivered to your door",
+      "type": "physical_item",
+      "value": "Free Print",
+      "imageUrl": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
+      "expiresAt": "2024-06-30T23:59:59Z",
+      "requirements": {
+        "contractAddress": "0xf8d6e0586b0a20c7",
+        "minBalance": 3,
+        "traits": {
+          "rarity": "rare"
+        }
+      },
+      "redemptionUrl": "https://prints.mintari.app/claim"
+    },
+    {
+      "id": "vip-experience",
+      "title": "VIP Studio Tour",
+      "description": "Exclusive behind-the-scenes tour of our AI art creation process",
+      "type": "experience",
+      "value": "VIP Access",
+      "imageUrl": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
+      "expiresAt": "2024-08-31T23:59:59Z",
+      "requirements": {
+        "contractAddress": "0xf8d6e0586b0a20c7",
+        "minBalance": 5
+      },
+      "redemptionUrl": "https://experience.mintari.app/vip-tour"
+    },
+    {
+      "id": "bonus-tokens",
+      "title": "Bonus Transformation Credits",
+      "description": "Get 5 free AI transformation credits for creating more Ghibli NFTs",
+      "type": "token",
+      "value": "5 Credits",
+      "requirements": {
+        "contractAddress": "0xf8d6e0586b0a20c7",
+        "tokenIds": ["1", "2", "3", "4", "5"]
+      },
+      "redemptionUrl": "https://mintari.app/credits/claim"
+    }
+  ]
+}
