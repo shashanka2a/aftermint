@@ -142,11 +142,3 @@ python manage.py runserver
 MIT License.
 
 ---
-
-Let me know if you want to add:
-
-* Links to live demo or GitHub
-* Contributing instructions
-* Deployment notes (Vercel/Docker/etc)
-
-Want this exported as `.md` file too?
