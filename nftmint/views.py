@@ -1,3 +1,6 @@
+# nftmint/views.py
+
 from django.shortcuts import render
 
-# Create your views here.
+def mint_view(request):
+    return render(request, 'nftmint.html')
