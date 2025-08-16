@@ -1,8 +1,51 @@
 {% extends 'core/base.html' %}
 {% block content %}
-<section class="py-20 text-center text-white">
-  <h2 class="text-3xl font-bold mb-4">🌸 Preview Your NFT</h2>
-  <img src="{{ image_url }}" class="mx-auto mb-4 rounded shadow-lg w-1/2">
-  <a href="/nftmint/mint/" class="bg-green-500 hover:bg-green-400 text-black px-6 py-2 rounded">Mint NFT</a>
-</section>
+
+<img src="{{ image_url }}" alt="Stylized NFT Preview" class="rounded-lg shadow-lg mb-4" />
+<button id="mintBtn" class="bg-green-500 hover:bg-green-400 text-black px-6 py-3 rounded-lg font-bold">
+  Mint as NFT
+</button>
+
+<script src="https://unpkg.com/@onflow/fcl/dist/fcl.js"></script>
+<script>
+  // FCL config (testnet)
+  fcl.config()
+    .put("accessNode.api", "https://rest-testnet.onflow.org")
+    .put("discovery.wallet", "https://fcl-discovery.onflow.org/testnet/authn");
+
+  document.getElementById('mintBtn').addEventListener('click', async () => {
+    try {
+      const user = await fcl.authenticate();
+      const imageUrl = "{{ image_url }}";
+
+      // Call your Cadence mint transaction here (simplified)
+      const txId = await fcl.mutate({
+        cadence: `import YourNFTContract from 0xNFT_CONTRACT
+
+transaction(ipfsHash: String) {
+  prepare(acct: AuthAccount) {
+    YourNFTContract.mintNFT(recipient: acct.address, metadata: {"image": ipfsHash})
+  }
+}`,
+        args: (arg, t) => [arg(imageUrl, t.String)],
+        proposer: fcl.currentUser,
+        payer: fcl.currentUser,
+        authorizations: [fcl.currentUser],
+        limit: 50,
+      });
+
+      fcl.tx(txId).subscribe(res => {
+        if (res.status === 4) {
+          alert("🎉 NFT Minted Successfully!");
+          // Trigger AfterMint SDK or redirect to /mint/ confirmation
+        }
+      });
+
+    } catch (e) {
+      console.error("Mint failed:", e);
+      alert("Something went wrong.");
+    }
+  });
+</script>
+
 {% endblock %}
