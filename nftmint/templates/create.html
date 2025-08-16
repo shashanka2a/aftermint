@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<section class="py-20 px-6 max-w-3xl mx-auto">
+  <h2 class="text-3xl font-semibold text-white mb-6">🖼️ Upload Image</h2>
+  <form method="POST" enctype="multipart/form-data" class="bg-slate-800 p-6 rounded-lg">
+    {% csrf_token %}
+    <input type="file" name="image" class="block w-full mb-4 text-white">
+    <button type="submit" class="bg-green-500 hover:bg-green-400 text-black px-4 py-2 rounded">Transform</button>
+  </form>
+</section>
+{% endblock %}
