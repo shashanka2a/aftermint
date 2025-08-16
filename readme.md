@@ -39,18 +39,21 @@
 ## 📁 Project Structure
 
 ```
-mintari/
-├── backend/            # Django app for image processing & IPFS upload
-│   ├── nftmint/
-│   └── media/
-├── frontend/           # Next.js frontend for Mintari
-│   └── pages/
-│       ├── index.tsx
-│       ├── preview.tsx
-│       └── mint.tsx
-├── sdk/                # AfterMint SDK (NPM package or local import)
-├── public/
-└── README.md
+.
+├── mintari/             # 🎨 Frontend NFT minting app (Next.js + AfterMint SDK)
+│   ├── pages/
+│   ├── components/
+│   ├── public/
+│   └── styles/
+├── aftermint-sdk/       # 🔌 Modular, chain-agnostic TypeScript SDK
+│   ├── src/
+│   ├── dist/
+│   └── package.json
+├── backend/             # 🛠️ Legacy Django setup (image processing, Ghibli-style AI, IPFS upload)
+│   └── nftmint/
+├── README.md
+└── .gitignore
+
 ```
 
 ---
