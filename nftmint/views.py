@@ -37,3 +37,8 @@ def create(request):
 
     return render(request, 'nftmint/create.html')
 
+
+def mint(request):
+    return render(request, 'nftmint/mint.html')
+
+
