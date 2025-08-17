@@ -125,8 +125,8 @@ HUGGING_FACE_API_TOKEN=your_huggingface_token
          │                       │                       │
          ▼                       ▼                       ▼
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   IPFS Storage  │    │   AfterMint     │    │   Wallet        │
-│   (Multi-provider)│   │   SDK Logic     │    │   Integration   │
+│ Walrus Storage  │    │   AfterMint     │    │   Wallet        │
+│ (IPFS Upload)   │    │   SDK Logic     │    │   Integration   │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
