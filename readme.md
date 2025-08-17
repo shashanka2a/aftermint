@@ -98,13 +98,6 @@ REPLICATE_API_TOKEN=your_replicate_token
 HUGGING_FACE_API_TOKEN=your_huggingface_token
 ```
 
-### Getting API Keys
-
-1. **Pinata** (Recommended): [pinata.cloud](https://pinata.cloud) - Free tier available
-2. **Web3.Storage**: [web3.storage](https://web3.storage) - Free IPFS storage
-3. **Replicate**: [replicate.com](https://replicate.com) - AI image transformation
-4. **Hugging Face**: [huggingface.co](https://huggingface.co) - Free AI models
-
 ## 🎯 How It Works
 
 1. **Connect Wallet** - Link your Flow wallet (Blocto, Lilico, etc.)
@@ -148,26 +141,6 @@ HUGGING_FACE_API_TOKEN=your_huggingface_token
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
-## 📱 Screenshots
-
-### Home Page
-![Home](AfterMint-SDK-Landing.png)
-
-### Mintari Flow
-![Creation](Mintari-1.png)
-
-### Mintari Working
-![Success](Mintari-2.png)
-
-## 🤝 Flow Ecosystem Partners
-
-- **POAP** - Exclusive creator badges
-- **NBA Top Shot** - Basketball collectibles
-- **Pinnacle** - Football NFTs
-- **Flowty** - NFT marketplace
-- **Matrix World** - Virtual worlds
-- **Flovatar** - Avatar NFTs
-
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
@@ -178,15 +151,6 @@ npm run build
 vercel --prod
 ```
 
-### Docker
-
-```bash
-# Build Docker image
-docker build -t mintari .
-
-# Run container
-docker run -p 3000:3000 mintari
-```
 
 ## 🚀 AfterMint SDK Vision
 
@@ -263,18 +227,6 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Flow Team** - For the amazing blockchain platform
-- **Studio Ghibli** - For inspiring magical art
-- **Open Source Community** - For the incredible tools and libraries
-
-## 📞 Contact
-
-- **Website**: [mintari.xyz](https://mintari.xyz)
-- **Twitter**: [@MintariApp](https://twitter.com/MintariApp)
-- **Email**: hello@mintari.xyz
 
 ---
 
