@@ -245,6 +245,7 @@ await rewards.showRewards(nftData, userAddress)
 
 ### Phase 3: Ecosystem Growth (Q2-Q4 2024)
 - [ ] **10+ Flow Projects** - SDK adoption
+- [ ] - [ ] **Zircuit extension** - Extend support to Zircuit and other EVM chains
 - [ ] **Advanced Rewards** - Gamification features
 - [ ] **Mobile SDK** - React Native support
 - [ ] **Enterprise Features** - White-label solutions
