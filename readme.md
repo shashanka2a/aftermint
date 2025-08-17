@@ -237,15 +237,15 @@ await rewards.showRewards(nftData, userAddress)
 - [x] **SDK Architecture** - Technical foundation
 - [x] **Flow Integration** - Real blockchain minting
 
-### Phase 2: SDK Launch (Q1 2024)
+### Phase 2: SDK Launch (Q4 2025)
 - [ ] **AfterMint SDK** - Public npm package
 - [ ] **Developer Documentation** - Integration guides
 - [ ] **Partner API** - Ecosystem connections
 - [ ] **Analytics Dashboard** - Project insights
 
-### Phase 3: Ecosystem Growth (Q2-Q4 2024)
+### Phase 3: Ecosystem Growth (Q1 2026)
 - [ ] **10+ Flow Projects** - SDK adoption
-- [ ] - [ ] **Zircuit extension** - Extend support to Zircuit and other EVM chains
+- [ ] **Zircuit extension** - Extend support to Zircuit and other EVM chains
 - [ ] **Advanced Rewards** - Gamification features
 - [ ] **Mobile SDK** - React Native support
 - [ ] **Enterprise Features** - White-label solutions
