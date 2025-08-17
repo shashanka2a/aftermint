@@ -271,9 +271,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Website**: [mintari.app](https://mintari.app)
+- **Website**: [mintari.app](https://mintari.xyz)
 - **Twitter**: [@MintariApp](https://twitter.com/MintariApp)
-- **Discord**: [Join our community](https://discord.gg/mintari)
 - **Email**: hello@mintari.app
 
 ---
